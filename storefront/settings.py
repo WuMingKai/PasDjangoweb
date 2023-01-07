@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_filters',
+    'corsheaders',
     'rest_framework',
     'djoser',
     'playground',
@@ -50,6 +51,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -64,6 +67,10 @@ INTERNAL_IPS = [
     # ...
     '127.0.0.2',
     # ...
+]
+
+CORS_ALLOWED_ORIGINS=[
+    'http://127.0.0.2:8001'
 ]
 
 ROOT_URLCONF = 'storefront.urls'
