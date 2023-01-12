@@ -185,3 +185,6 @@ DEFAULT_FROM_EMAIL = 'service@domain.com'
 ADMINS = [
     ('Mosh', 'admin@domain.com')
 ]
+
+
+CELERY_BROKER_URL = 'redis://localhost:6379/1'
