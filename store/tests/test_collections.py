@@ -1,5 +1,8 @@
+from store.models import Collection
 from rest_framework import status
 import pytest
+from model_bakery import baker
+
 
 @pytest.fixture
 def create_collection(api_client): # This is the tricky part that if has collection as parameter here, and
@@ -46,3 +49,25 @@ format the tests:
     <blank>
     Assert part
 """
+
+#api_client will sent a GET request to a server.
+@pytest.mark.django_db
+class TestRetriveCollection:
+  def test_if_collection_exist_return_200(self, api_client):
+    # In this Arrange part, we need to create a collection so we can retrieve it later.
+    # Because this test shouldn't be dependent on the other test that creating a collection.
+    # Because if this test is executed first, it's going to fail since there is no collection.
+    # So our test shall should not have any dependency on each other. Then we write the following code.
+    #Collection.objects.create(title='a') 
+    collection = baker.make(Collection)
+
+    response = api_client.get(f'/store/collections/{collection.id}/')
+
+    assert response.status_code == status.HTTP_200_OK
+    # assert response.data['id'] == collection.id
+    # assert response.data['title'] == collection.title
+    assert response.data == {
+      'id' : collection.id,
+      'title' : collection.title,
+      'products_count': 0
+    }
