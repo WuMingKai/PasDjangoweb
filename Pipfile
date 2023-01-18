@@ -21,6 +21,8 @@ celery = "*"
 flower = "*"
 django-redis = "*"
 whitenoise = "*"
+gunicorn = "*"
+waitress = "*"
 
 [dev-packages]
 autopep8 = "*"
