@@ -23,6 +23,8 @@ django-redis = "*"
 whitenoise = "*"
 gunicorn = "*"
 waitress = "*"
+django-rest-swagger = "*"
+drf-yasg = "*"
 
 [dev-packages]
 autopep8 = "*"
