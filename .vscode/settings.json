@@ -34,5 +34,7 @@
         "env.bak{,/**}",
         "venv.bak{,/**}",
         ".vscode{,/**}"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/b3e83468-8261-4529-b50b-c74c22464e7a/AppServices/subscriptions/b3e83468-8261-4529-b50b-c74c22464e7a/resourceGroups/MainForKMW_group/providers/Microsoft.Web/sites/StoreProductss",
+    "appService.deploySubpath": "store"
 }

@@ -64,12 +64,12 @@ MIDDLEWARE = [
 
 INTERNAL_IPS = [
     # ...
-    '127.0.0.2',
+    '127.0.0.1',
     # ...
 ]
 
 CORS_ALLOWED_ORIGINS=[
-    'http://127.0.0.2:8001'
+    'http://127.0.0.1:8001'
 ]
 
 ROOT_URLCONF = 'storefront.urls'
@@ -219,8 +219,8 @@ LOGGING = {
     },
     'formatters': {
         'verbose': {
-            'format': '{asvime} ({levelname}) - {name} - {message}',
-            'style': '{'
+            'format': '{asctime} ({levelname}) - {name} - {message}',
+            'style': '{' #str.format()
         }
     }
 }
