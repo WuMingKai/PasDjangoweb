@@ -25,6 +25,7 @@ gunicorn = "*"
 waitress = "*"
 django-rest-swagger = "*"
 drf-yasg = "*"
+dj-database-url = "*"
 
 [dev-packages]
 autopep8 = "*"
