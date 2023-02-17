@@ -1,4 +1,5 @@
 *.pyc
 /media/
 /static/
+/.vs/
 general.log
